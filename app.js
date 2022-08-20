@@ -10,34 +10,39 @@ function calci(){
 
 console.log(clc.redBright.bgYellowBright(`---Simple calculator---`));
 
-let a = readlineSync.questionInt(warn("Enter the number : "));
-let b = readlineSync.questionInt(warn("Enter the number : "));
+let a = readlineSync.questionInt(warn("Enter the number1 : "));
+let b = readlineSync.questionInt(warn("Enter the number2 : "));
 
-console.log(clc.greenBright`(" Select from below\n add" for Addition, "sub" for Subtraction, "mult" for Multipication , "div" for division)`);
+console.log(clc.greenBright(`Select from below operations\n + for Addition, - for Subtraction, * for Multipication , / for division, )`));
 
-let operation = readlineSync.question(clc.red("Enter the operation :"))
-
-let array = ["add","sub","mult","div"]
+let operation = readlineSync.question(clc.red("Operation :"))
+// operation = operation.toString()
+let array = ["+","-","*","/"]
 for(let i=0;i<array.length;i++){
     if(operation == array[i]){
 switch (operation){
-    case "add":
-    result=a+b;
+    case "+":
+    result = a+b;
     break;
-    case "sub":
+    case "-":
         result=a-b;
         break;
-    case "mult":
+    case "*":
         result=a*b;
         break;
-        case "div":
+        case "/":
             result= a/b;          
     }
-    console.log(color(result));
-
+    console.log(color("Output:",result));
     }
-}
-}
+} 
+let more = readlineSync.question(`Do you want to continue(Y/n):`)
+        if(more == 'Y'){
+            console.clear()
+        console.log(calci())
+        } else (console.clear())
+} calci ()
 
-// console.log(result);
-calci ()
+     
+        //  else if (more == 'n'){ console.clear()}
+
